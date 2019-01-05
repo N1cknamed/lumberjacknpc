@@ -1,3 +1,4 @@
 author = N1cknamed
-version = 0.1
+version = 0.1.1
 displayName = Lumberjack NPC
+homepage = https://forums.terraria.org/index.php?threads/lumberjack-npc-mod.75255/
