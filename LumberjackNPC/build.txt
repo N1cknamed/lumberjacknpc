@@ -1,0 +1,3 @@
+author = N1cknamed
+version = 0.1
+displayName = Lumberjack NPC

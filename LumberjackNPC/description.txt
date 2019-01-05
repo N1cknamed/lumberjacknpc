@@ -1,0 +1,1 @@
+This is a very simple mod which adds in a Lumberjack Town NPC that sells wood. He has a unique sprite and a couple of quotes.
