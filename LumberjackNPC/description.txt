@@ -1,1 +1,3 @@
-This is a very simple mod which adds in a Lumberjack Town NPC that sells wood. He has a unique sprite and a couple of quotes.
+Adds a simple lumberjack npc that sells wood. Will move in after EoC is defeated. Sells Pearlwood when the world enters Hardmode.
+
+This is my first mod, so bugs might occur. Please leave your feedback on the forums.

@@ -38,8 +38,6 @@ namespace LumberjackNPC.NPCs
 
 		public override void SetStaticDefaults()
 		{
-			// DisplayName automatically assigned from .lang files, but the commented line below is the normal approach.
-			// DisplayName.SetDefault("Example Person");
 			Main.npcFrameCount[npc.type] = 25;
 			NPCID.Sets.ExtraFramesCount[npc.type] = 9;
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
@@ -65,15 +63,6 @@ namespace LumberjackNPC.NPCs
 			npc.knockBackResist = 0.5f;
 			animationType = NPCID.Guide;
 		}
-
-		/*public override void HitEffect(int hitDirection, double damage)
-		{
-			int num = npc.life > 0 ? 1 : 5;
-			for (int k = 0; k < num; k++)
-			{
-				Dust.NewDust(npc.position, npc.width, npc.height, mod.DustType("Sparkle"));
-			}
-		}*/
 
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
@@ -135,27 +124,6 @@ namespace LumberjackNPC.NPCs
 			}
 		}
 
-		/* 
-		// Consider using this alternate approach to choosing a random thing. Very useful for a variety of use cases.
-		// The WeightedRandom class needs "using Terraria.Utilities;" to use
-		public override string GetChat()
-		{
-			WeightedRandom<string> chat = new WeightedRandom<string>();
-
-			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
-			if (partyGirl >= 0 && Main.rand.Next(4) == 0)
-			{
-				chat.Add("Can you please tell " + Main.npc[partyGirl].GivenName + " to stop decorating my house with colors?");
-			}
-			chat.Add("Sometimes I feel like I'm different from everyone else here.");
-			chat.Add("What's your favorite color? My favorite colors are white and black.");
-			chat.Add("What? I don't have any arms or legs? Oh, don't be ridiculous!");
-			chat.Add("This message has a weight of 5, meaning it appears 5 times more often.", 5.0);
-			chat.Add("This message has a weight of 0.1, meaning it appears 10 times as rare.", 0.1);
-			return chat; // chat is implicitly cast to a string. You can also do "return chat.Get();" if that makes you feel better
-		}
-		*/
-
 		public override void SetChatButtons(ref string button, ref string button2)
 		{
 			button = "Shop";
@@ -172,33 +140,33 @@ namespace LumberjackNPC.NPCs
 		public override void SetupShop(Chest shop, ref int nextSlot)
         {
             shop.item[nextSlot].SetDefaults(ItemID.Wood);
-            shop.item[nextSlot].value = 10;
+            shop.item[nextSlot].value = 50;
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.BorealWood);
-            shop.item[nextSlot].value = 10;
+            shop.item[nextSlot].value = 50;
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.RichMahogany);
-            shop.item[nextSlot].value = 15;
+            shop.item[nextSlot].value = 60;
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.PalmWood);
-            shop.item[nextSlot].value = 15;
+            shop.item[nextSlot].value = 60;
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.Ebonwood);
-            shop.item[nextSlot].value = 15;
+            shop.item[nextSlot].value = 70;
             nextSlot++;
 
             shop.item[nextSlot].SetDefaults(ItemID.Shadewood);
-            shop.item[nextSlot].value = 15;
+            shop.item[nextSlot].value = 70;
             nextSlot++;
 
             if (Main.hardMode)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Pearlwood);
-                shop.item[nextSlot].value = 20;
+                shop.item[nextSlot].value = 100;
                 nextSlot++;
             }
             
@@ -221,14 +189,14 @@ namespace LumberjackNPC.NPCs
 			randExtraCooldown = 10;
 		}
 
-        public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). Item is the Texture2D instance of the item to be drawn (use Main.itemTexture[id of item]), itemSize is the width and height of the item's hitbox
+        public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)
         {
             scale = 1f;
-            item = Main.itemTexture[3494]; //this defines the item that this npc will use
+            item = Main.itemTexture[3494]; //lead axe
             itemSize = 72;
         }
 
-        public override void TownNPCAttackSwing(ref int itemWidth, ref int itemHeight) //  Allows you to determine the width and height of the item this town NPC swings when it attacks, which controls the range of this NPC's swung weapon.
+        public override void TownNPCAttackSwing(ref int itemWidth, ref int itemHeight) 
         {
             itemWidth = 50;
             itemHeight = 50;
