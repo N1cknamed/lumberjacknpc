@@ -3,6 +3,7 @@ Adds a simple lumberjack npc that sells wood. Will move in after EoC is defeated
 This is my first mod, so bugs might occur. Please leave your feedback on the forums.
 
 Version history:
+- v0.3.2: New browser icon and fixed pricing issue
 - v0.3.1: Balancing adjustments and fixed some small spelling errors in his quotes.
 - v0.3.0: Now sells living wood related items and glowing mushrooms (full requirements on the forum page). Also fixed a few spriting issues with the gore and added a bunch of new quotes, including more interactivity with other NPCs.
 - v0.2.0: Now sells pine tree blocks and cacti. Also added new quotes.
