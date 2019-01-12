@@ -1,3 +1,10 @@
-Adds a simple lumberjack npc that sells wood. Will move in after EoC is defeated. Sells Pearlwood when the world enters Hardmode.
+Adds a simple lumberjack npc that sells wood. Will move in after EoC is defeated. Sells Pearlwood when the world enters Hardmode. Also sells a bunch of other related items. A more detailed description can be found on the forum post.
 
 This is my first mod, so bugs might occur. Please leave your feedback on the forums.
+
+Version history:
+- v0.3.0: Now sells living wood related items and glowing mushrooms (full requirements on the forum page). Also fixed a few spriting issues with the gore and added a bunch of new quotes, including more interactivity with other NPCs.
+- v0.2.0: Now sells pine tree blocks and cacti. Also added new quotes.
+- v0.1.2: Added browser icon and fixed a few small spriting issues.
+- v0.1.1: Added mod description in browser.
+- v0.1.0: Release

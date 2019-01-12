@@ -109,16 +109,40 @@ namespace LumberjackNPC.NPCs
 		public override string GetChat()
 		{
 			int Dryad = NPC.FindFirstNPC(NPCID.Dryad);
-			if (Dryad >= 0 && Main.rand.Next(4) == 0)
+            int Truffle = NPC.FindFirstNPC(NPCID.Truffle);
+            int Wizard = NPC.FindFirstNPC(NPCID.Wizard);
+            int TaxCollector = NPC.FindFirstNPC(NPCID.TaxCollector);
+
+            if (Dryad >= 0 && Main.rand.Next(11) == 0)
 			{
-				return "Do you have any idea why " + Main.npc[Dryad].GivenName + " won't talk to me?";
+				return "Seems like " + Main.npc[Dryad].GivenName + " isn't too happy with my business. Even though my wood is completely natural! Can you understand that?";
 			}
-			switch (Main.rand.Next(3))
+            if (Truffle >= 0 && Main.rand.Next(10) == 0)
+            {
+                return "Once I was just walking around in some caves when I saw some massive shiny mushrooms. Sure hope " + Main.npc[Truffle].GivenName + " doesn't mind me chopping them down.";
+            }
+            if (Wizard >= 0 && Main.rand.Next(9) == 0)
+            {
+                return Main.npc[Wizard].GivenName + " gave me some odd looking twigs the other day. Perhaps you know what to do with these.";
+            }
+            if (TaxCollector >= 0 && Main.rand.Next(8) == 0)
+            {
+                return "If " + Main.npc[TaxCollector].GivenName + " asks, I'm not home!";
+            }
+            switch (Main.rand.Next(7))
 			{
 				case 0:
-					return "Dynasty wood? Where did you get that?";
+					return "Despite what that salesman might tell you, Dynasty wood isn't actually real wood.";
 				case 1:
-					return "I have never actually found a spooky tree. Can you try to find one for me?";
+					return "I have never actually found a spooky tree. At this point I'm not sure they exist.";
+                case 2:
+                    return "What's that? Cactus isn't wood? Say that to my axe.";
+                case 3:
+                    return "I've heard people saying they've found massive trees underground before! I would love to chop one down some day.";
+                case 4:
+                    return "Once I chopped down one of the largest trees I have ever seen, and it turned out there was a house hiding underneath it. I sure hope nobody lived there anymore.";
+                case 5:
+                    return "Did you know trees in the jungle can grow completely on their own? You don't even have to plant anything! Very convenient.";
 				default:
 					return "TIMBERRR!";
 			}
@@ -155,6 +179,21 @@ namespace LumberjackNPC.NPCs
             shop.item[nextSlot].value = 60;
             nextSlot++;
 
+            shop.item[nextSlot].SetDefaults(ItemID.PineTreeBlock);
+            shop.item[nextSlot].value = 150;
+            nextSlot++;
+
+            shop.item[nextSlot].SetDefaults(ItemID.Cactus);
+            shop.item[nextSlot].value = 30;
+            nextSlot++;
+
+            if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+            {
+                shop.item[nextSlot].SetDefaults(ItemID.GlowingMushroom);
+                shop.item[nextSlot].value = 1000;
+                nextSlot++;
+            }
+
             shop.item[nextSlot].SetDefaults(ItemID.Ebonwood);
             shop.item[nextSlot].value = 70;
             nextSlot++;
@@ -169,7 +208,29 @@ namespace LumberjackNPC.NPCs
                 shop.item[nextSlot].value = 100;
                 nextSlot++;
             }
-            
+
+            shop.item[nextSlot].SetDefaults(ItemID.LivingLoom);
+            shop.item[nextSlot].value = 100000;
+            nextSlot++;
+
+            if (NPC.savedWizard)
+            {
+                shop.item[nextSlot].SetDefaults(ItemID.LivingWoodWand);
+                shop.item[nextSlot].value = 50000;
+                nextSlot++;
+
+                shop.item[nextSlot].SetDefaults(ItemID.LeafWand);
+                shop.item[nextSlot].value = 50000;
+                nextSlot++;
+
+                shop.item[nextSlot].SetDefaults(ItemID.LivingMahoganyWand);
+                shop.item[nextSlot].value = 75000;
+                nextSlot++;
+
+                shop.item[nextSlot].SetDefaults(ItemID.LivingMahoganyLeafWand);
+                shop.item[nextSlot].value = 75000;
+                nextSlot++;
+            }
         }
 
         public override void NPCLoot()
