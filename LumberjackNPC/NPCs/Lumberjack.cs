@@ -190,7 +190,7 @@ namespace LumberjackNPC.NPCs
             if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.GlowingMushroom);
-                shop.item[nextSlot].value = 1000;
+                shop.item[nextSlot].value = 5000;
                 nextSlot++;
             }
 
