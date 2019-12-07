@@ -7,5 +7,14 @@ namespace LumberjackNPC
 		public LumberjackNPC()
 		{
 		}
-	}
+
+        public override void PostSetupContent()
+        {
+            Mod censusMod = ModLoader.GetMod("Census");
+            if (censusMod != null)
+            {
+                censusMod.Call("TownNPCCondition", NPCType("Lumberjack"), "When Eye of Ctulhu has been defeated");
+            }
+        }
+    }
 }

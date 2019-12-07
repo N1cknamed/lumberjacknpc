@@ -80,7 +80,7 @@ namespace LumberjackNPC.NPCs
 
         public override string TownNPCName()
 		{
-			switch (WorldGen.genRand.Next(4))
+			switch (WorldGen.genRand.Next(5))
 			{
 				case 0:
 					return "Robbie";
@@ -88,6 +88,8 @@ namespace LumberjackNPC.NPCs
 					return "Jack";
 				case 2:
 					return "Yukon";
+                case 3:
+                    return "Nick";
 				default:
 					return "Chuck";
 			}
@@ -113,38 +115,40 @@ namespace LumberjackNPC.NPCs
             int Wizard = NPC.FindFirstNPC(NPCID.Wizard);
             int TaxCollector = NPC.FindFirstNPC(NPCID.TaxCollector);
 
-            if (Dryad >= 0 && Main.rand.Next(11) == 0)
+            if (Dryad >= 0 && Main.rand.Next(12) == 0)
 			{
 				return "Seems like " + Main.npc[Dryad].GivenName + " isn't too happy with my business. Even though my wood is completely natural! Can you understand that?";
 			}
-            if (Truffle >= 0 && Main.rand.Next(10) == 0)
+            if (Truffle >= 0 && Main.rand.Next(11) == 0)
             {
                 return "Once I was just walking around in some caves when I saw some massive shiny mushrooms. Sure hope " + Main.npc[Truffle].GivenName + " doesn't mind me chopping them down.";
             }
-            if (Wizard >= 0 && Main.rand.Next(9) == 0)
+            if (Wizard >= 0 && Main.rand.Next(10) == 0)
             {
                 return Main.npc[Wizard].GivenName + " gave me some odd looking twigs the other day. Perhaps you know what to do with these.";
             }
-            if (TaxCollector >= 0 && Main.rand.Next(8) == 0)
+            if (TaxCollector >= 0 && Main.rand.Next(9) == 0)
             {
                 return "If " + Main.npc[TaxCollector].GivenName + " asks, I'm not home!";
             }
-            switch (Main.rand.Next(7))
+            switch (Main.rand.Next(8))
 			{
 				case 0:
-					return "Despite what that salesman might tell you, Dynasty wood isn't actually real wood.";
+					return "Despite what that salesman might tell you, Dynasty wood isn't actually real wood. Ever seen a dynasty tree? I bet you haven't.";
 				case 1:
 					return "I have never actually found a spooky tree. At this point I'm not sure they exist.";
                 case 2:
-                    return "What's that? Cactus isn't wood? Say that to my axe.";
+                    return "Those damn cacti keep growing back after I chop them down. At least I get to sell them afterwards.";
                 case 3:
                     return "I've heard people saying they've found massive trees underground before! I would love to chop one down some day.";
                 case 4:
                     return "Once I chopped down one of the largest trees I have ever seen, and it turned out there was a house hiding underneath it. I sure hope nobody lived there anymore.";
                 case 5:
                     return "Did you know trees in the jungle can grow completely on their own? You don't even have to plant anything! Very convenient.";
+                case 6:
+                    return "I found this weird looking furniture piece below the roots of a tree. 10 gold and it's yours to take!";
 				default:
-					return "TIMBERRR!";
+					return "Saw a golden squirrel climb out of a tree the other day. I couldn't believe my eyes!";
 			}
 		}
 
@@ -235,7 +239,7 @@ namespace LumberjackNPC.NPCs
 
         public override void NPCLoot()
 		{
-			Item.NewItem(npc.getRect(), mod.ItemType<Items.Lumberhat>());
+			Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Lumberhat>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
