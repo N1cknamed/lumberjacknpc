@@ -239,7 +239,8 @@ namespace LumberjackNPC.NPCs
 
         public override void NPCLoot()
 		{
-			Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Lumberhat>());
+            if (Main.rand.Next(8) == 1)
+                Item.NewItem(npc.getRect(), ModContent.ItemType<Items.Lumberhat>());
 		}
 
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)

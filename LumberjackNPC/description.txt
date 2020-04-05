@@ -1,12 +1,19 @@
-Adds a simple lumberjack npc that sells wood. Will move in after EoC is defeated. Sells Pearlwood when the world enters Hardmode. Also sells a bunch of other related items. A more detailed description can be found on the forum post.
+[c/03FCAD:Description]
 
-This is my first mod, so bugs might occur. Please leave your feedback on the forums.
+Adds a simple new town NPC that sells all types of wood. He will move in after EoC is defeated. When the world enters Hardmode he will begin selling pearlwood. He also sells a bunch of other wood related items that you will have to see for yourself (or read the forum post).
 
-Version history:
+This NPC will sell you [i/s1:183] after all 3 mech bosses have been defeated, to reduce the grind for shroomite armor. It is still recommended to set up a farm as buying enough mushrooms to craft all shroomite gear will cost nearly 12 platinum.
+
+This is my first mod, so bugs might occur. If you have found any bugs, or if you want a more detailed description, you can do so on the forum post.
+
+
+[c/03FCAD:Version history]
+
+- v0.3.4: Minor fixes
 - v0.3.3: Support added for Census mod by Jopojelly
 - v0.3.2: New browser icon and fixed pricing issue
 - v0.3.1: Balancing adjustments and fixed some small spelling errors in his quotes.
-- v0.3.0: Now sells living wood related items and glowing mushrooms (full requirements on the forum page). Also fixed a few spriting issues with the gore and added a bunch of new quotes, including more interactivity with other NPCs.
+- v0.3.0: Now sells living wood related items and glowing mushrooms. Also fixed a few spriting issues with the gore and added a bunch of new quotes, including more interactivity with other NPCs.
 - v0.2.0: Now sells pine tree blocks and cacti. Also added new quotes.
 - v0.1.2: Added browser icon and fixed a few small spriting issues.
 - v0.1.1: Added mod description in browser.
